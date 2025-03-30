@@ -38,37 +38,37 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-xl font-display font-bold">Nexus</a>
+          <a href="#" className="text-xl font-display font-bold text-gradient">Nexus</a>
         </div>
         
         <div className="hidden md:flex space-x-8">
           <button 
             onClick={() => scrollToSection('jobs')}
-            className="text-sm font-medium hover:text-black/70 transition-colors"
+            className="text-sm font-medium hover:text-purple-600 transition-colors"
           >
             Jobs
           </button>
           <button 
             onClick={() => scrollToSection('reviews')}
-            className="text-sm font-medium hover:text-black/70 transition-colors"
+            className="text-sm font-medium hover:text-purple-600 transition-colors"
           >
             Reviews
           </button>
           <button 
             onClick={() => scrollToSection('stories')}
-            className="text-sm font-medium hover:text-black/70 transition-colors"
+            className="text-sm font-medium hover:text-purple-600 transition-colors"
           >
             Stories
           </button>
           <button 
             onClick={() => scrollToSection('case-studies')}
-            className="text-sm font-medium hover:text-black/70 transition-colors"
+            className="text-sm font-medium hover:text-purple-600 transition-colors"
           >
             Case Studies
           </button>
         </div>
         
-        <Button size="sm" className="bg-black text-white hover:bg-black/90">
+        <Button size="sm" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 border-0">
           <MessageSquare className="h-4 w-4 mr-2" />
           Join Community
         </Button>

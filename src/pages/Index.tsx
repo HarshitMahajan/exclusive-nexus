@@ -51,28 +51,32 @@ const Index = () => {
       location: "Remote",
       salary: "$120k - $150k",
       tags: ["React", "TypeScript", "5+ Years"],
-      isNew: true
+      isNew: true,
+      color: "bg-accent-blue"
     },
     {
       title: "Product Designer",
       company: "DesignMasters",
       location: "New York",
       salary: "$90k - $120k",
-      tags: ["Figma", "UI/UX", "Product Design"]
+      tags: ["Figma", "UI/UX", "Product Design"],
+      color: "bg-accent-purple"
     },
     {
       title: "Backend Engineer",
       company: "ServerLogic",
       location: "San Francisco",
       salary: "$130k - $160k",
-      tags: ["Node.js", "AWS", "Database"]
+      tags: ["Node.js", "AWS", "Database"],
+      color: "bg-accent-green"
     },
     {
       title: "Marketing Manager",
       company: "GrowthPulse",
       location: "Remote",
       salary: "$85k - $110k",
-      tags: ["Growth", "Strategy", "Analytics"]
+      tags: ["Growth", "Strategy", "Analytics"],
+      color: "bg-accent-pink"
     }
   ];
 
@@ -82,19 +86,22 @@ const Index = () => {
       content: "Joining this community was the best career decision I've made. Within weeks, I had multiple interviews lined up with top companies.",
       author: "Sarah Johnson",
       position: "Product Designer at Stripe",
-      rating: 5
+      rating: 5,
+      imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
     },
     {
       content: "What sets Nexus apart is the quality of the network. Every connection I've made has been valuable for my professional growth.",
       author: "Michael Chen",
       position: "Full Stack Developer",
-      rating: 5
+      rating: 5,
+      imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
     },
     {
       content: "The focus on proof of work makes all the difference. I found a job that truly values my skills rather than just my resume.",
       author: "Jessica Williams",
       position: "UX Researcher",
-      rating: 4
+      rating: 4,
+      imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
     }
   ];
 
@@ -152,23 +159,29 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-hidden">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32 px-6">
+      {/* Hero Section with colorful background elements */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-6 overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-2/3 h-2/3 bg-gradient-to-b from-blue-50 to-purple-50 rounded-bl-full opacity-70 -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-yellow-50 to-transparent rounded-tr-full opacity-70 -z-10"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-100 blob opacity-30 -z-10"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-blue-100 blob opacity-30 -z-10"></div>
+        
         <div 
           ref={heroRef}
-          className="container mx-auto text-center animate-on-scroll"
+          className="container mx-auto text-center relative z-10 animate-on-scroll"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight max-w-4xl mx-auto mb-6">
-            Get Hired Based On Your <span className="text-black">Actual Work</span> & Community
+            Get Hired Based On Your <span className="text-gradient">Actual Work</span> & Community
           </h1>
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-10">
             Join our exclusive network where proof of work matters more than resumes. Connect with top companies looking for proven talent.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-black text-white hover:bg-black/90 px-6">
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 px-6 border-0">
               <MessageSquare className="h-5 w-5 mr-2" />
               Join Our WhatsApp Community
             </Button>
@@ -195,7 +208,7 @@ const Index = () => {
       </section>
       
       {/* Jobs Board Section */}
-      <section id="jobs" className="py-20 bg-gray-50">
+      <section id="jobs" className="py-20 bg-pattern-dots">
         <div 
           ref={jobsRef}
           className="container mx-auto px-6 animate-on-scroll"
@@ -226,6 +239,7 @@ const Index = () => {
                 salary={job.salary}
                 tags={job.tags}
                 isNew={job.isNew}
+                className={job.color}
               />
             ))}
           </div>
@@ -240,7 +254,7 @@ const Index = () => {
       </section>
       
       {/* Reviews Section */}
-      <section id="reviews" className="py-20 bg-white">
+      <section id="reviews" className="py-20 bg-gradient-to-br from-white to-blue-50">
         <div 
           ref={reviewsRef}
           className="container mx-auto px-6 animate-on-scroll"
@@ -260,6 +274,7 @@ const Index = () => {
                 author={testimonial.author}
                 position={testimonial.position}
                 rating={testimonial.rating}
+                imageUrl={testimonial.imageUrl}
               />
             ))}
           </div>
@@ -267,7 +282,7 @@ const Index = () => {
       </section>
       
       {/* Success Stories Section */}
-      <section id="stories" className="py-20 bg-gray-50">
+      <section id="stories" className="py-20 bg-pattern-dots">
         <div 
           ref={storiesRef}
           className="container mx-auto px-6 animate-on-scroll"
@@ -311,7 +326,7 @@ const Index = () => {
       </section>
       
       {/* Case Studies Section */}
-      <section id="case-studies" className="py-20 bg-white">
+      <section id="case-studies" className="py-20 bg-gradient-to-br from-white to-purple-50">
         <div 
           ref={caseStudiesRef}
           className="container mx-auto px-6 animate-on-scroll"
@@ -337,7 +352,7 @@ const Index = () => {
           </div>
           
           <div className="flex justify-center mt-12">
-            <Button className="bg-black text-white hover:bg-black/90">
+            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:opacity-90 border-0">
               Showcase Your Work
             </Button>
           </div>
@@ -345,10 +360,10 @@ const Index = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-display font-bold mb-6">Ready to Transform Your Career?</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-10">
+          <p className="text-white/90 max-w-2xl mx-auto mb-10">
             Join our exclusive community today and connect with employers who value demonstrated skills over traditional resumes.
           </p>
           <Button size="lg" className="bg-white text-gray-900 hover:bg-white/90">

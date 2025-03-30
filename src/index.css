@@ -45,6 +45,13 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Adding color accent variables */
+    --accent-blue: 221 83% 53%;
+    --accent-purple: 262 83% 58%;
+    --accent-pink: 330 81% 60%;
+    --accent-yellow: 43 96% 58%;
+    --accent-green: 142 69% 58%;
   }
 
   * {
@@ -63,6 +70,40 @@
   .section-padding {
     @apply py-20 px-6 md:px-12 lg:px-24;
   }
+  
+  /* Background patterns and gradients */
+  .bg-pattern-dots {
+    background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  }
+  
+  .bg-gradient-secondary {
+    background: linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+  }
+  
+  .bg-accent-purple {
+    background-color: hsl(var(--accent-purple) / 0.1);
+  }
+  
+  .bg-accent-blue {
+    background-color: hsl(var(--accent-blue) / 0.1);
+  }
+  
+  .bg-accent-pink {
+    background-color: hsl(var(--accent-pink) / 0.1);
+  }
+  
+  .bg-accent-yellow {
+    background-color: hsl(var(--accent-yellow) / 0.1);
+  }
+  
+  .bg-accent-green {
+    background-color: hsl(var(--accent-green) / 0.1);
+  }
 }
 
 @layer utilities {
@@ -79,6 +120,21 @@
   .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600;
+  }
+  
+  .blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: blob-animation 8s ease-in-out infinite;
+  }
+  
+  @keyframes blob-animation {
+    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
   }
 }
 

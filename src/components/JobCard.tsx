@@ -17,6 +17,7 @@ interface JobCardProps {
   salary: string;
   tags: string[];
   isNew?: boolean;
+  className?: string;
 }
 
 const JobCard: React.FC<JobCardProps> = ({ 
@@ -25,10 +26,11 @@ const JobCard: React.FC<JobCardProps> = ({
   location, 
   salary, 
   tags, 
-  isNew = false 
+  isNew = false,
+  className = ""
 }) => {
   return (
-    <Card className="transition-all duration-300 hover:shadow-md border border-gray-100 h-full flex flex-col">
+    <Card className={`transition-all duration-300 hover:shadow-md border border-gray-100 h-full flex flex-col ${className}`}>
       <CardHeader className="pb-2">
         <div className="flex justify-between items-start">
           <div>
