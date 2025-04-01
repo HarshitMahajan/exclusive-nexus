@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHumanPage = location.pathname === '/human';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,10 +36,12 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'glass py-3' : 'bg-transparent py-5'
+        isHumanPage 
+          ? scrolled ? 'bg-black/70 backdrop-blur-lg py-3' : 'bg-transparent py-5' 
+          : scrolled ? 'glass py-3' : 'bg-transparent py-5'
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center">
           <Link to="/" className="text-xl font-display font-bold text-gradient">Cofounds</Link>
         </div>
@@ -63,7 +67,9 @@ const Navbar = () => {
           </button>
           <Link 
             to="/human" 
-            className="text-sm font-medium hover:text-purple-600 transition-colors"
+            className={`text-sm font-medium transition-colors ${
+              isHumanPage ? 'text-purple-400' : 'hover:text-purple-600'
+            }`}
           >
             Human
           </Link>

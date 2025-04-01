@@ -1,95 +1,96 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Card } from "@/components/ui/card";
 
 const Human = () => {
+  // Array of portrait images with diverse individuals
+  const portraits = [
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1964&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=1780&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1507152832244-10d45c7eda57?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1504257432389-52343af06ae3?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?q=80&w=2076&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1629747490241-624f07d70e1e?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop",
+  ];
+
   return (
     <div className="bg-black min-h-screen text-white">
       <Navbar />
       
-      <div className="container mx-auto pt-32 pb-16 px-4">
-        <div className="text-center mb-16">
+      <div className="pt-20 pb-16">
+        {/* Title Section */}
+        <div className="container mx-auto px-4 mb-8 text-center">
           <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">Human Connection</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Real people with real skills creating real impact in the professional world.
           </p>
         </div>
 
-        {/* Portrait Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {/* Portrait 1 */}
-          <div className="relative group overflow-hidden rounded-lg">
-            <div className="aspect-w-3 aspect-h-4 bg-gray-900">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="Portrait of a woman with laptop" 
-                className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-xl font-bold">Sarah Johnson</h3>
-              <p className="text-gray-300">UX Designer who found her dream job through community connections</p>
-            </div>
-          </div>
-          
-          {/* Portrait 2 */}
-          <div className="relative group overflow-hidden rounded-lg">
-            <div className="aspect-w-3 aspect-h-4 bg-gray-900">
-              <img 
-                src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="Portrait of a man in business attire" 
-                className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-xl font-bold">David Chang</h3>
-              <p className="text-gray-300">Software Engineer who built his portfolio through meaningful projects</p>
-            </div>
-          </div>
-          
-          {/* Portrait 3 */}
-          <div className="relative group overflow-hidden rounded-lg">
-            <div className="aspect-w-3 aspect-h-4 bg-gray-900">
-              <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="Professional portrait of smiling woman" 
-                className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-xl font-bold">Maya Rodriguez</h3>
-              <p className="text-gray-300">Marketing Director who leveraged community endorsements to advance her career</p>
-            </div>
+        {/* Portrait Grid */}
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-1 md:gap-2">
+            {portraits.map((portrait, index) => (
+              <div 
+                key={index}
+                className="aspect-square overflow-hidden bg-gray-900 relative group"
+              >
+                <img 
+                  src={portrait} 
+                  alt={`Portrait ${index + 1}`} 
+                  className="object-cover w-full h-full transition-all duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300"></div>
+              </div>
+            ))}
           </div>
         </div>
-        
-        {/* Content Section */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gray-900 backdrop-blur-lg rounded-xl p-8 md:p-12 mb-16">
-            <h2 className="text-3xl font-display font-bold mb-6">The Human Advantage</h2>
-            <p className="text-gray-300 mb-4">In a world of digital profiles and algorithmic matching, we bring the human element back to professional networking.</p>
-            <p className="text-gray-300 mb-6">Cofounds celebrates real proof of work, genuine community connections, and the authentic stories behind every career journey.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      </div>
+
+      {/* Human Advantage Section */}
+      <div className="bg-gray-950 py-16">
+        <div className="container mx-auto px-4">
+          <Card className="bg-gray-900/30 backdrop-blur-sm border-gray-800 text-white p-8 md:p-10 mx-auto max-w-4xl">
+            <h2 className="text-3xl font-display font-bold mb-6 text-center">The Human Advantage</h2>
+            <p className="text-gray-300 text-center mb-8">
+              In a world increasingly driven by algorithms and automation, the human touch remains our most valuable asset.
+              Cofounds celebrates the diversity, creativity, and unique perspectives that only humans can provide.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-3">Peer Endorsements</h3>
-                <p className="text-gray-400">Community vouching means more than anonymous reviews. Real recognition from respected peers.</p>
+                <h3 className="text-xl font-bold mb-3">Real Connections</h3>
+                <p className="text-gray-400">
+                  Build relationships based on authentic interactions, not just digital profiles. Human-to-human connections drive true innovation.
+                </p>
               </div>
               <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-3">Project Showcases</h3>
-                <p className="text-gray-400">Show what you've actually built, not just what you claim to know. Let your work speak for itself.</p>
+                <h3 className="text-xl font-bold mb-3">Diverse Perspectives</h3>
+                <p className="text-gray-400">
+                  Every face in our community brings unique experiences and insights that create a richer, more creative professional environment.
+                </p>
               </div>
             </div>
-          </div>
-          
-          <div className="text-center">
-            <h2 className="text-3xl font-display font-bold mb-6">Join Our Community of Humans</h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">Connect with professionals who value authentic relationships and meaningful work.</p>
-            <Button size="lg" className="bg-white text-black hover:bg-gray-200 border-0">
-              Join Our WhatsApp Community
-            </Button>
-          </div>
+          </Card>
         </div>
       </div>
 
