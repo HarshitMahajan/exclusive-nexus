@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +39,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-xl font-display font-bold text-gradient">Cofounds</a>
+          <Link to="/" className="text-xl font-display font-bold text-gradient">Cofounds</Link>
         </div>
         
         <div className="hidden md:flex space-x-8">
@@ -60,6 +61,12 @@ const Navbar = () => {
           >
             Stories
           </button>
+          <Link 
+            to="/human" 
+            className="text-sm font-medium hover:text-purple-600 transition-colors"
+          >
+            Human
+          </Link>
         </div>
         
         <Button size="sm" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 border-0">
