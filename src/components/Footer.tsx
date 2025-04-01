@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           <div className="md:col-span-2">
-            <h2 className="text-xl font-display font-bold mb-4">Nexus</h2>
+            <h2 className="text-xl font-display font-bold mb-4">Cofounds</h2>
             <p className="text-gray-600 max-w-md">
               Get hired based on your proof of work and community connections.
               Join our exclusive network of professionals.
@@ -31,9 +31,6 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#stories" className="text-gray-600 hover:text-gray-900 text-sm">Success Stories</a>
-              </li>
-              <li>
-                <a href="#case-studies" className="text-gray-600 hover:text-gray-900 text-sm">Case Studies</a>
               </li>
             </ul>
           </div>
@@ -59,7 +56,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Nexus. All rights reserved.
+            © {new Date().getFullYear()} Cofounds. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-gray-600">

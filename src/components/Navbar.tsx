@@ -38,7 +38,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-xl font-display font-bold text-gradient">Nexus</a>
+          <a href="#" className="text-xl font-display font-bold text-gradient">Cofounds</a>
         </div>
         
         <div className="hidden md:flex space-x-8">
@@ -59,12 +59,6 @@ const Navbar = () => {
             className="text-sm font-medium hover:text-purple-600 transition-colors"
           >
             Stories
-          </button>
-          <button 
-            onClick={() => scrollToSection('case-studies')}
-            className="text-sm font-medium hover:text-purple-600 transition-colors"
-          >
-            Case Studies
           </button>
         </div>
         

@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 import JobCard from "@/components/JobCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import StoryCard from "@/components/StoryCard";
-import CaseStudyCard from "@/components/CaseStudyCard";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -15,7 +14,6 @@ const Index = () => {
   const jobsRef = useScrollAnimation();
   const reviewsRef = useScrollAnimation();
   const storiesRef = useScrollAnimation();
-  const caseStudiesRef = useScrollAnimation();
 
   // Initialize scroll animations
   useEffect(() => {
@@ -90,7 +88,7 @@ const Index = () => {
       imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
     },
     {
-      content: "What sets Nexus apart is the quality of the network. Every connection I've made has been valuable for my professional growth.",
+      content: "What sets Cofounds apart is the quality of the network. Every connection I've made has been valuable for my professional growth.",
       author: "Michael Chen",
       position: "Full Stack Developer",
       rating: 5,
@@ -130,24 +128,6 @@ const Index = () => {
     }
   ];
 
-  // Sample case studies
-  const caseStudies = [
-    {
-      title: "Building a Design System From Scratch",
-      company: "DesignCo",
-      description: "How Maria showcased her design leadership by creating a comprehensive design system that reduced development time by 40%.",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      tags: ["Design Systems", "UI/UX", "Leadership"]
-    },
-    {
-      title: "Scaling an API to Handle 10M+ Requests",
-      company: "TechScale",
-      description: "James documented his approach to optimizing backend performance, which became his ticket to a senior engineering role.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      tags: ["Backend", "Performance", "Architecture"]
-    }
-  ];
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -175,10 +155,10 @@ const Index = () => {
           className="container mx-auto text-center relative z-10 animate-on-scroll"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight max-w-4xl mx-auto mb-6">
-            Get Hired Based On Your <span className="text-gradient">Actual Work</span> & Community
+            Find Your Dream Role Based On Your <span className="text-gradient">Real Work</span> & Community
           </h1>
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            Join our exclusive network where proof of work matters more than resumes. Connect with top companies looking for proven talent.
+            Join our vibrant community where your actual work speaks louder than resumes. Connect with forward-thinking companies seeking proven talent.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 px-6 border-0">
@@ -320,40 +300,6 @@ const Index = () => {
             <Button variant="link" className="flex items-center text-black">
               View all stories
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </section>
-      
-      {/* Case Studies Section */}
-      <section id="case-studies" className="py-20 bg-gradient-to-br from-white to-purple-50">
-        <div 
-          ref={caseStudiesRef}
-          className="container mx-auto px-6 animate-on-scroll"
-        >
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold mb-4">Case Studies</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Detailed proof of work showcases that helped members land their dream roles.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 gap-12">
-            {caseStudies.map((study, index) => (
-              <CaseStudyCard
-                key={index}
-                title={study.title}
-                company={study.company}
-                description={study.description}
-                image={study.image}
-                tags={study.tags}
-              />
-            ))}
-          </div>
-          
-          <div className="flex justify-center mt-12">
-            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:opacity-90 border-0">
-              Showcase Your Work
             </Button>
           </div>
         </div>
